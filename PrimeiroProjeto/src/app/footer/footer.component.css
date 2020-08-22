@@ -1,0 +1,11 @@
+/* .footer { */
+
+.navbar-brand {
+    position: fixed;
+    bottom: 0px;
+}
+
+.footer>span {
+    font-size: 1.1rem;
+    font-weight: 300;
+}

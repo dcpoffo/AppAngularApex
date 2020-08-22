@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a routerLink="dashboard" class="navbar-brand">Apex</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item" routerLink='active'>
+                    <a routerLink="alunos" class="nav-link">Alunos</a>
+                </li>
+                <li class="nav-item" routerLink='active'>
+                    <a routerLink="professores" class="nav-link">Professores</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav" dropdown>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="button-basic" dropdownToggle id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+            Darlan
+        </a>
+                    <div id="dropdown-basic" *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" routerLink="perfil">Perfil</a>
+                        <a class="dropdown-item" href="#">Sair</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
