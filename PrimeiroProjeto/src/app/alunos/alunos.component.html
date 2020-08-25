@@ -3,9 +3,9 @@
     <div *ngIf="alunoSelecionado" class="col-sm-6">
 
 
-                <app-titulo [titulo]="(alunoSelecionado.id === 0 ? 'Novo Aluno' : 'Código: ' + alunoSelecionado.id)">
-                  <button class="btn btn-sm btn-outline-danger" (click)="voltar()">Fechar</button>
-                </app-titulo>
+        <app-titulo [titulo]="(alunoSelecionado.id === 0 ? 'Novo Aluno' : 'Código: ' + alunoSelecionado.id)">
+            <button class="btn btn-sm btn-outline-danger" (click)="voltar()">Fechar</button>
+        </app-titulo>
 
         <form [formGroup]="alunoForm" (submit)="alunoSubmit()">
             <div class=" form-group">
@@ -22,7 +22,7 @@
             </div>
 
             <div class="formGoup">
-              <button class="btn btn-success" [disabled]="!alunoForm.valid">Salvar</button>
+                <button class="btn btn-success" [disabled]="!alunoForm.valid">Salvar</button>
             </div>
         </form>
 
@@ -30,7 +30,7 @@
 
     <div [ngClass]="{'col-sm-6':alunoSelecionado,'col-sm-12':!alunoSelecionado}" class="col-sm-6">
         <app-titulo [titulo]="titulo ">
-          <button class="btn btn-sm btn-success" (click)="novoAluno()">Cadastrar Aluno</button>
+            <button class="btn btn-sm btn-success" (click)="novoAluno()">Cadastrar Aluno</button>
         </app-titulo>
         <table class="table">
             <thead class="thead-light ">
@@ -52,12 +52,12 @@
                     <td>{{aluno.nome}}</td>
                     <td>{{aluno.sobrenome}}</td>
                     <td>{{aluno.telefone}}</td>
-                  <td>
-                    <div class="btn-group">
-                      <button (click)="openModal(template)" class="btn btn-sm btn-outline-primary">Professores</button>
-                      <button class="btn btn-sm btn-outline-danger">Desativar</button>
-                    </div>
-                  </td>
+                    <td>
+                        <div class="btn-group">
+                            <button (click)="openModal(template)" class="btn btn-sm btn-outline-primary">Professores</button>
+                            <button class="btn btn-sm btn-outline-danger">Desativar</button>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -65,13 +65,13 @@
 </div>
 
 <ng-template #template>
-  <div class="modal-body">
-    <app-professores></app-professores>
-  </div>
+    <div class="modal-body">
+        <app-professores></app-professores>
+    </div>
 
-  <div class="modal-footer">
-    <button type="button" class="btn pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <div class="modal-footer">
+        <button type="button" class="btn pull-right" aria-label="Close" (click)="modalRef.hide()">
       Fechar
     </button>
-  </div>
+    </div>
 </ng-template>

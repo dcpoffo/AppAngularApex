@@ -36,7 +36,7 @@ namespace PrimeiroProjetoWebApi.Controllers
             {
                   try
                   {
-                        var result = await _repositorio.GetAlunoAsyncById(alunoId, includeProfessor: false);
+                        var result = await _repositorio.GetProdutosAsyncById(alunoId);
                         return Ok(result);
                   }
                   catch (Exception ex)

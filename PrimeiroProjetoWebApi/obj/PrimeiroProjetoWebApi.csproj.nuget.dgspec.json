@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Apex02\\Desktop\\Darlan\\Angular\\PrimeiroProjetoWebApi\\PrimeiroProjetoWebApi.csproj": {}
+    "D:\\SISTEMAS\\CSharp\\Apex\\Angular\\AppAngularApex\\PrimeiroProjetoWebApi\\PrimeiroProjetoWebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Apex02\\Desktop\\Darlan\\Angular\\PrimeiroProjetoWebApi\\PrimeiroProjetoWebApi.csproj": {
+    "D:\\SISTEMAS\\CSharp\\Apex\\Angular\\AppAngularApex\\PrimeiroProjetoWebApi\\PrimeiroProjetoWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Apex02\\Desktop\\Darlan\\Angular\\PrimeiroProjetoWebApi\\PrimeiroProjetoWebApi.csproj",
+        "projectUniqueName": "D:\\SISTEMAS\\CSharp\\Apex\\Angular\\AppAngularApex\\PrimeiroProjetoWebApi\\PrimeiroProjetoWebApi.csproj",
         "projectName": "PrimeiroProjetoWebApi",
-        "projectPath": "C:\\Users\\Apex02\\Desktop\\Darlan\\Angular\\PrimeiroProjetoWebApi\\PrimeiroProjetoWebApi.csproj",
-        "packagesPath": "C:\\Users\\Apex02\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Apex02\\Desktop\\Darlan\\Angular\\PrimeiroProjetoWebApi\\obj\\",
+        "projectPath": "D:\\SISTEMAS\\CSharp\\Apex\\Angular\\AppAngularApex\\PrimeiroProjetoWebApi\\PrimeiroProjetoWebApi.csproj",
+        "packagesPath": "C:\\Users\\dcpof\\.nuget\\packages\\",
+        "outputPath": "D:\\SISTEMAS\\CSharp\\Apex\\Angular\\AppAngularApex\\PrimeiroProjetoWebApi\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Apex02\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\dcpof\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -85,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
