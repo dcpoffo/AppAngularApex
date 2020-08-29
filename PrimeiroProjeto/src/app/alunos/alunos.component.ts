@@ -1,3 +1,4 @@
+import { DialogService } from './../services/dialog.service';
 import { AlunoService } from './../services/aluno.service';
 import { Aluno } from './../models/Aluno';
 import { Component, OnInit, TemplateRef } from '@angular/core';
@@ -19,35 +20,61 @@ export class AlunosComponent implements OnInit {
 
   public alunos = [];
 
-    constructor(private formBuilder:FormBuilder,
-                private modalService: BsModalService,
-                private alunoServico: AlunoService) {
+  constructor(private formBuilder: FormBuilder,
+    private modalService: BsModalService,
+    private alunoServico: AlunoService,
+    private dialogService: DialogService) {
     this.criarForm();
-   }
+  }
 
-   openModal(template: TemplateRef<any>) {
+  openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }
 
-   criarForm() {
-     this.alunoForm = this.formBuilder.group({
-       id: [''],
-       nome: ['',Validators.required],
-       sobrenome: ['',Validators.required],
-       telefone: ['',Validators.required]
-     });
-   }
+  excluirAluno(aluno: Aluno, confirmado: boolean) {
+    if (confirmado) {
+      this.alunoServico.delete(aluno.id).subscribe(
+        (retorno: string) => {
+          console.log(retorno);
+          this.carregarAlunos();
+        },
+        (erro: any) => {
+          console.log(erro);
+        }
+      );
+    }
+  }
 
-   alunoSubmit() {
-     //console.log(this.alunoForm.value);
-     this.salvarAluno(this.alunoForm.value);
-   }
+  public openConfirmationDialog(aluno: Aluno) {
+    console.log(aluno);
+    this.dialogService.confirmar('Excluir...', 'Deseja realmente excluir?')
+      .then(
+        (confirmado) => this.excluirAluno(aluno, confirmado)
+      )
+      .catch(
+        (erro: any) => console.log(erro)
+      );
+  }
+
+  criarForm() {
+    this.alunoForm = this.formBuilder.group({
+      id: [''],
+      nome: ['', Validators.required],
+      sobrenome: ['', Validators.required],
+      telefone: ['', Validators.required]
+    });
+  }
+
+  alunoSubmit() {
+    //console.log(this.alunoForm.value);
+    this.salvarAluno(this.alunoForm.value);
+  }
 
   ngOnInit() {
     this.carregarAlunos();
   }
 
-  carregarAlunos(){
+  carregarAlunos() {
     this.alunoServico.getAll().subscribe(
       (resultado: Aluno[]) => {
         this.alunos = resultado;
@@ -58,8 +85,8 @@ export class AlunosComponent implements OnInit {
     );
   }
 
-  salvarAluno(aluno: Aluno){
-    (aluno.id === 0 ? this.modo = 'post'  : this.modo = 'put');
+  salvarAluno(aluno: Aluno) {
+    (aluno.id === 0 ? this.modo = 'post' : this.modo = 'put');
 
     this.alunoServico[this.modo](aluno).subscribe(
       (retorno: Aluno) => {
@@ -72,16 +99,16 @@ export class AlunosComponent implements OnInit {
     );
   }
 
-  alunoSelect(aluno: Aluno){
+  alunoSelect(aluno: Aluno) {
     this.alunoSelecionado = aluno;
     this.alunoForm.patchValue(aluno);
   }
 
-  voltar(){
+  voltar() {
     this.alunoSelecionado = null;
   }
 
-  novoAluno(){
+  novoAluno() {
     this.alunoSelecionado = new Aluno();
     this.alunoForm.patchValue(this.alunoSelecionado);
   }

@@ -1,0 +1,57 @@
+
+<div *ngIf="disciplinaSelecionada">
+  <app-titulo [titulo]="(disciplinaSelecionada.id === 0 ? 'Nova Disciplina' : 'Código: ' + disciplinaSelecionada.id)">
+    <button class="btn btn-warning" (click)="voltar()">Lista de Disciplinas</button>
+  </app-titulo>
+
+
+  <form [formGroup]="disciplinaForm" (submit)="disciplinaSubmit()">
+    <div class="form-group">
+      <label for="formGroupExampleInput">Nome</label>
+      <input type="text" formControlName="nome" class="form-control">
+    </div>
+    <div class="from-gropu">
+      <label for="formGroupExampleInput">Professor</label>
+      <select class="form-control" formControlName="professorId">
+        <option selected>Selecione o Professor</option>
+        <option  *ngFor="let prof of professores" [value]="prof.id">{{prof.nome}}</option>
+      </select>
+  </div>
+  <br>
+    <div class="container row form-group">
+      <button class="btn btn-success" [disabled]="!disciplinaForm.valid">Salvar</button>
+    </div>
+</form>
+</div>
+
+<div *ngIf="!disciplinaSelecionada">
+  <app-titulo [titulo]="titulo">
+    <button class="btn btn-success" (click)="disciplinaNovo()">Cadastrar Disciplina</button>
+  </app-titulo>
+
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th>Visualizar</th>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Professor</th>
+        <th scope="col">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let disc of disciplinas">
+      <td><button (click)="disciplinaSelected(disc)" class="text-dark btn btn-sm btn-outline-warning">Detalhe</button></td>
+      <td scope="row">{{disc.id}}</td>
+      <td>{{disc.nome}}</td>
+      <td>{{disc.professor.nome}}</td>
+      <td>
+          <div class="btn-group">
+            <button (click)="openConfirmationDialog(disc)" class="text-dark btn btn-sm btn-outline-danger">Excluir</button>
+          </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+

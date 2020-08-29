@@ -143,5 +143,31 @@ namespace PrimeiroProjetoWebApi.data
 
                   return await query.FirstOrDefaultAsync();
             }
+
+            public async Task<Disciplina[]> ObterTodasAsDisciplinasAsync(bool includeProfessor)
+        {
+            IQueryable<Disciplina> query = _context.Disciplina;
+
+            if (includeProfessor)
+            {
+                query = query.Include(pe => pe.Professor);
+            }
+
+            query = query.AsNoTracking()
+                         .OrderBy(c => c.Id);
+
+            return await query.ToArrayAsync();
+        }
+
+        public async Task<Disciplina> ObterDisciplinaAsyncPeloId(int disciplinaId)
+        {
+            IQueryable<Disciplina> query = _context.Disciplina;
+
+            query = query.AsNoTracking()
+                         .OrderBy(c => c.Id)
+                         .Where(c => c.Id == disciplinaId);
+            
+            return await query.FirstOrDefaultAsync();
+        }
       }
 }

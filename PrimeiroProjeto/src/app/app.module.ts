@@ -16,9 +16,12 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { FooterComponent } from './footer/footer.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { HttpClientModule } from '@angular/common/http';
+import { DialogComponent } from './dialog/dialog.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DisciplinaComponent } from './disciplina/disciplina.component';
 
 @NgModule({
-   declarations: [
+   declarations: [		
       AppComponent,
       AlunosComponent,
       ProfessoresComponent,
@@ -26,7 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
       PerfilComponent,
       NavComponent,
       TituloComponent,
-      FooterComponent
+      FooterComponent,
+      DialogComponent,
+      DisciplinaComponent
    ],
    imports: [
       BrowserModule,
@@ -36,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
       FormsModule,
       ReactiveFormsModule,
       ModalModule.forRoot(),
-      HttpClientModule
+      HttpClientModule,
+      NgbModule
    ],
    providers: [],
    bootstrap: [

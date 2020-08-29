@@ -21,5 +21,9 @@ namespace PrimeiroProjetoWebApi.data
         Task<Professor[]> GetAllProfessoresAsyncByAlunoId(int alunoId, bool includeDisciplina);
         Task<Professor> GetProfessorAsyncById(int professorId, bool includeAluno);
 
+        //DISCIPLINA
+        Task<Disciplina[]> ObterTodasAsDisciplinasAsync(bool incluirProfessor);
+        Task<Disciplina> ObterDisciplinaAsyncPeloId(int disciplinaId);
+
     }
 }

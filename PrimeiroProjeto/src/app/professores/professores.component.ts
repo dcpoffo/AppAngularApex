@@ -15,67 +15,78 @@ export class ProfessoresComponent implements OnInit {
   public professorSelecionado: Professor;
   public professorForm: FormGroup;
   public modalRef: BsModalRef;
-  public modo: 'post';
+  public modo = 'post';
 
   public professores = [];
 
-  constructor(private formBuilder:FormBuilder,
+  constructor(private fb: FormBuilder,
               private modalService: BsModalService,
-              private professorServico: ProfessorService) {
+              private profService: ProfessorService) {
     this.criarForm();
   }
 
+  // tslint:disable-next-line: typedef
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }
 
-    criarForm() {
-      this.professorForm = this.formBuilder.group({
-        id: [''],
-        nome: ['', Validators.required],
-        disciplina: ['', Validators.required]
-      });
-    }
+  // tslint:disable-next-line: typedef
+  ngOnInit() {
+    this.carregarProfessores();
+  }
 
-    salvarProfessor(professor:Professor){
-      this.professorServico.put(professor).subscribe(
-        (retorno: Professor) => {
-          console.log(retorno);
-          this.carregarProfessores();
-        },
-        (erro: any) => {
-          console.log(erro);
-        }
-      );
-    }
+  carregarProfessores() {
+    this.profService.getAll().subscribe(
+      (resultado: Professor[]) => {
+        this.professores = resultado;
+        console.log(resultado);
+      },
+      (erro: any) => {
+        console.log(erro);
+      }
+    );
+  }
 
-    carregarProfessores(){
-      this.professorServico.getAll().subscribe(
-        (resultado: Professor[]) => {
-          this.professores = resultado;
-        },
-        (erro: any) => {
-          console.log(erro);
-        }
-      );
-    }
+  // tslint:disable-next-line: typedef
+  criarForm() {
+    this.professorForm = this.fb.group({
+      id: [''],
+      nome: ['', Validators.required]
+    });
+  }
 
-    professorSubmit() {
-      //console.log(this.professorForm.value);
-      this.salvarProfessor(this.professorForm.value);
-    }
+  // tslint:disable-next-line: typedef
+  professorSubmit() {
+    this.salvarProfessor(this.professorForm.value);
+  }
 
-  professorSelect(professor: Professor){
+  salvarProfessor(professor: Professor) {
+    (professor.id === 0 ? this.modo = 'post' : this.modo = 'put');
+
+    this.profService[this.modo](professor).subscribe(
+      (retorno: Professor) => {
+        console.log(retorno);
+        this.voltar();
+        this.carregarProfessores();
+      },
+      (erro: any) => {
+        console.log(erro);
+      }
+    );
+  }
+
+  professorSelected(professor: Professor) {
     this.professorSelecionado = professor;
     this.professorForm.patchValue(professor);
   }
 
-  voltar(){
+  voltar() {
     this.professorSelecionado = null;
   }
 
-  ngOnInit(): void {
-    this.carregarProfessores();
+  professorNovo() {
+    this.professorSelecionado = new Professor();
+    this.professorForm.patchValue(this.professorSelecionado);
   }
 
 }

@@ -26,6 +26,6 @@ export class AlunoService {
   }
 
   delete(id: number) {
-    return this.http.delete(`${this.baseURL}/alunoId=${id}`);
+    return this.http.delete(`${this.baseURL}/${id}`);
   }
 }

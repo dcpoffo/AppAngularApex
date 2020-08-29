@@ -13,11 +13,21 @@ export class ProfessorService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Professor[]>{
+  getAll(): Observable<Professor[]> {
     return this.http.get<Professor[]>(this.baseURL);
   }
 
-  put(professor: Professor){
+  put(professor: Professor) {
     return this.http.put(`${this.baseURL}/${professor.id}`, professor);
   }
+
+  post(professor: Professor) {
+    return this.http.post(this.baseURL, professor);
+  }
+
+  delete(id: number) {
+    return this.http.delete(`${this.baseURL}/professorId=${id}`);
+  }
+
+
 }
