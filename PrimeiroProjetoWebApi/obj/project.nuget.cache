@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WZ3R2uXBvWjRRvOYz8WT2fU1k/YSZ9Pia/2PSsHLoDoZzfUpGr1VdxXFaEdNRjAFIo2jwsAdRckBufYFWSY5sA==",
+  "dgSpecHash": "Yt1EXTIuC0X4hf2CREIwPHLMPTx8cAm53ZuyE8U0OiAZhiXeggM9Z7nkmG2bQYkSoumiyPCcRVAgMSofnif7DQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Apex02\\Desktop\\Darlan\\Angular\\PrimeiroProjetoWebApi\\PrimeiroProjetoWebApi.csproj",
+  "projectFilePath": "C:\\Users\\Apex02\\Desktop\\Darlan\\AppAngularApex\\PrimeiroProjetoWebApi\\PrimeiroProjetoWebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Apex02\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.7\\microsoft.aspnetcore.jsonpatch.3.1.7.nupkg.sha512",
     "C:\\Users\\Apex02\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.7\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.7.nupkg.sha512",

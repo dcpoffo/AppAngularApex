@@ -24,4 +24,8 @@ export class AlunoService {
   post(aluno: Aluno){
     return this.http.post(this.baseURL, aluno);
   }
+
+  delete(id: number) {
+    return this.http.delete(`${this.baseURL}/alunoId=${id}`);
+  }
 }

@@ -5431,11 +5431,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Apex02\\Desktop\\Darlan\\Angular\\PrimeiroProjetoWebApi\\PrimeiroProjetoWebApi.csproj",
+      "projectUniqueName": "C:\\Users\\Apex02\\Desktop\\Darlan\\AppAngularApex\\PrimeiroProjetoWebApi\\PrimeiroProjetoWebApi.csproj",
       "projectName": "PrimeiroProjetoWebApi",
-      "projectPath": "C:\\Users\\Apex02\\Desktop\\Darlan\\Angular\\PrimeiroProjetoWebApi\\PrimeiroProjetoWebApi.csproj",
+      "projectPath": "C:\\Users\\Apex02\\Desktop\\Darlan\\AppAngularApex\\PrimeiroProjetoWebApi\\PrimeiroProjetoWebApi.csproj",
       "packagesPath": "C:\\Users\\Apex02\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Apex02\\Desktop\\Darlan\\Angular\\PrimeiroProjetoWebApi\\obj\\",
+      "outputPath": "C:\\Users\\Apex02\\Desktop\\Darlan\\AppAngularApex\\PrimeiroProjetoWebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
